@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>csmk+frabjous@chaoslab.org</email>
+		<name>Ian Moone</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">marazmista/radeon-profile</remote-id>
+		<bugs-to>https://github.com/marazmista/radeon-profile/issues</bugs-to>
+	</upstream>
+	<use>
+		<flag name="daemon">
+			Pull <pkg>x11-apps/radeon-profile-daemon</pkg> so
+			the GUI application can be run as normal user
+		</flag>
+	</use>
+</pkgmetadata>

@@ -1,0 +1,3 @@
+# Override gentoo's stable no-multilib profiles to silence repoman warnings for
+# multilib packages
+amd64		default/linux/amd64/17.0/desktop/systemd			stable

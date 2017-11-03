@@ -1,0 +1,25 @@
+#!/bin/sh
+
+if [ "$(id -u)" = 0 ]
+then
+	echo "Don't run this as root!"
+	exit 1
+fi
+
+twisterHtmlFolder=${HOME}/.twister/html
+
+if ! test -d "${twisterHtmlFolder}"
+then
+	printf "\n${twisterHtmlFolder} does not exists.\n"
+	echo "If you haven't done so already,"
+	echo "please run twister-html-install."
+	exit 1
+fi
+
+cd "${twisterHtmlFolder}" || exit 1
+
+echo "Updating HTML files...\n"
+
+git pull
+
+exit $?

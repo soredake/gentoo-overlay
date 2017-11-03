@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories encoding="unicode" version="1.1">
+	<repo quality="experimental" status="unofficial">
+		<name>pinkpieea</name>
+		<description lang="en">Overlay with games and other packages</description>
+		<homepage>https://notabug.org/soredake/gentoo-overlay</homepage>
+		<owner type="person">
+			<email>fdsfgs@krutt.org</email>
+			<name>soredake</name>
+		</owner>
+		<source type="git">https://notabug.org/soredake/gentoo-overlay.git</source>
+	</repo>
+</repositories>
+

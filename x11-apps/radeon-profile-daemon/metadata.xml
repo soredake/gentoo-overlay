@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>csmk+frabjous@chaoslab.org</email>
+		<name>Ian Moone</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">marazmista/radeon-profile-daemon</remote-id>
+		<bugs-to>https://github.com/marazmista/radeon-profile-daemon/issues</bugs-to>
+	</upstream>
+	<longdescription lang="en">
+		System daemon for reading info about Radeon GPU clocks
+		and volts as well as control card power profiles so the
+		GUI radeon-profile application can be run as normal user.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,52 @@
+#!/bin/sh
+
+if [ "$(id -u)" = 0 ]
+then
+	echo "Don't run this as root!"
+	exit 1
+fi
+
+twisterFolder=${HOME}/.twister
+
+error() {
+	printf "\nAn error occured."
+	echo "Pleace report this at"
+	echo "https://github.com/ddorian1/gentoo-twister-overlay/issues"
+	exit 0
+}
+
+if test -e ${twisterFolder}
+then
+	echo "${twisterFolder} already exists."
+	echo "If you want to update twister's HTML files,"
+	echo "please run twister-html-update."
+	echo "Else, remove ${twisterFolder}"
+	echo "AFTER BACKING UP YOUR PRIVATE KEYS"
+	echo "and run twister-html-install again."
+	exit 1
+fi
+
+printf "Creating folder ${twisterFolder}...\n"
+
+mkdir ${twisterFolder} || error
+cd ${twisterFolder} || error
+
+printf "Geting HTML files...\n"
+
+git clone https://github.com/miguelfreitas/twister-html.git ./html || error
+
+printf "\nCreating config file..."
+printf "rpcuser=user\nrpcpassword=pwd" > ./twister.conf || error
+chmod 600 ./twister.conf || error
+
+printf "\nTwister-HTML was set up successfully\!"
+echo "You can now run twister with"
+echo "twisterd -rpcuser=user -rpcpassword=pwd -rpcallowip=127.0.0.1,"
+echo "open http://127.0.0.1:28332/index.html"
+echo "in your favorit webbrowser and"
+printf "log in with username 'user' and password 'pwd'.\n"
+echo "Pleace remember to run twister-html-update"
+echo "from time to time to keep twister's HTML files"
+echo "up to date."
+
+exit 0
