@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit ltprune libtool toolchain-funcs
+inherit autotools ltprune libtool toolchain-funcs
 
 DESCRIPTION="BitTorrent library written in C++ for *nix"
 HOMEPAGE="https://rakshasa.github.io/rtorrent/"
@@ -38,7 +38,6 @@ DEPEND="${RDEPEND}
 	test? ( dev-util/cppunit )"
 
 src_prepare() {
-	elibtoolize
 	if use ps ; then
 		list=(
 			"${DISTDIR}"/lt-base-cppunit-pkgconfig.patch
@@ -48,6 +47,7 @@ src_prepare() {
 		eapply "${list[@]}"
 	fi
 	eapply_user
+	eautoreconf
 }
 
 src_configure() {
