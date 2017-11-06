@@ -3,7 +3,8 @@
 
 EAPI=6
 PYTHON_COMPAT=( python2_7 )
-inherit eutils distutils-r1
+
+inherit distutils-r1
 
 DESCRIPTION="GTK3 & python based GUI for Syncthing"
 HOMEPAGE="https://github.com/syncthing/syncthing-gtk"

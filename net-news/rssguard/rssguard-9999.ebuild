@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit git-r3 qmake-utils
+inherit flag-o-matic git-r3 qmake-utils
 
 DESCRIPTION="A tiny RSS and Atom feed reader"
 HOMEPAGE="https://github.com/martinrotter/rssguard"
@@ -29,8 +29,10 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
+	# CONFIG+=ltcg is needed because of https://github.com/martinrotter/rssguard/issues/156
 	eqmake5 \
 		CONFIG+=$(usex debug debug release) \
+		$(is-flagq -flto* && echo "CONFIG+=ltcg") \
 		USE_WEBENGINE=$(usex webengine true false) \
 		LRELEASE_EXECUTABLE="$(qt5_get_bindir)/lrelease" \
 		PREFIX="${EPREFIX}"/usr \
