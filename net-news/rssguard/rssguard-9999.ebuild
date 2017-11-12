@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -29,6 +29,8 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
+	# needed after 8eb640b6f2e140e7c5a1adbe5532cf3662d850b5
+	"$(qt5_get_bindir)/lrelease" rssguard.pro
 	# CONFIG+=ltcg is needed because of https://github.com/martinrotter/rssguard/issues/156
 	eqmake5 \
 		CONFIG+=$(usex debug debug release) \

@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="amd64"
 IUSE="+fuse qt5"
 
-RDEPEND="fuse? ( sys-fs/fuse )
+RDEPEND="fuse? ( sys-fs/fuse:0 )
 	qt5? ( dev-qt/qtcore:5
 		dev-qt/qtgui:5
 		dev-qt/qtwidgets:5 )
