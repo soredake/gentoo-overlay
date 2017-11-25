@@ -11,7 +11,6 @@ EGIT_REPO_URI="https://github.com/tldr-pages/tldr-cpp-client.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE="zsh-completion"
 
 DEPEND="
