@@ -22,10 +22,13 @@ RDEPEND="
 	${DEPEND}
 "
 
+src_prepare() {
+	sed -i -e "s|/usr/local|${ED}/usr|g" Makefile || die
+	eapply_user
+}
+
 src_install() {
 	default
-	dobin tldr
-	doman man/tldr.1
 	newbashcomp autocomplete/complete.bash tldr
 
 	if use zsh-completion ; then
