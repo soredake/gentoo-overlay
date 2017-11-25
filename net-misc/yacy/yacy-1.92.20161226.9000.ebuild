@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="systemd"
 
-DEPEND=">=virtual/jdk-1.7:*"
+DEPEND="virtual/jdk"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"
@@ -53,7 +53,7 @@ src_install() {
 	dodir /var/log/yacy
 	chown yacy:yacy "${D}/var/log/yacy" || die
 
-	dosym /var/lib/yacy /${yacy_home}/DATA
+	dosym ../../../var/lib/yacy /${yacy_home}/DATA
 
 	if use systemd ; then
 		systemd_newunit "${FILESDIR}"/${PN}-ipv6.service ${PN}-ipv6.service

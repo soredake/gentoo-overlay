@@ -4,19 +4,6 @@
 	<maintainer type="person">
 		<email>rich0@gentoo.org</email>
 	</maintainer>
-	<use>
-		<flag name="boot">Include support for the boot timer.</flag>
-		<flag name="minutely">Support /etc/cron.minutely</flag>
-		<flag name="hourly">Support /etc/cron.hourly</flag>
-		<flag name="daily">Support /etc/cron.daily</flag>
-		<flag name="weekly">Support /etc/cron.weekly</flag>
-		<flag name="monthly">Support /etc/cron.monthly</flag>
-		<flag name="randomized-delay">Support systemd's feature 'randomized-delay'</flag>
-		<flag name="quarterly">Support quarterly systemd's feature</flag>
-		<flag name="semi_annually">Support for semi_annually systemd's feature</flag>
-		<flag name="yearly">Support /etc/cron.yearly</flag>
-		<flag name="persistent">Support for systemd's persistent</flag>
-	</use>
 	<upstream>
 		<remote-id type="github">systemd-cron/systemd-cron</remote-id>
 	</upstream>

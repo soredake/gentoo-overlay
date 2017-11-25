@@ -7,7 +7,7 @@ inherit cmake-utils
 
 DESCRIPTION="Provides a C++ API for D-BUS"
 HOMEPAGE="https://sourceforge.net/projects/dbus-cplusplus/ https://sourceforge.net/apps/mediawiki/dbus-cplusplus/index.php?title=Main_Page"
-SRC_URI="https://github.com/oleid/${PN}/archive/4d475c8812e95cd1485daa9e9290e3ca4d806558.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/oleid/${PN}/archive/4d475c8812e95cd1485daa9e9290e3ca4d806558.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL-2.1+"
 SLOT="0"

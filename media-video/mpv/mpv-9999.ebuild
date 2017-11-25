@@ -164,6 +164,7 @@ src_configure() {
 		$(usex cli '' '--disable-cplayer')
 		$(use_enable libmpv libmpv-shared)
 
+		--enable-ffmpeg-upstream
 		--disable-libmpv-static
 		--disable-static-build
 		# See deep down below for build-date.

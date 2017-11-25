@@ -19,7 +19,7 @@ DEPEND="dev-cpp/glibmm
 	net-misc/curl
 	dev-libs/libxml2
 	gstreamer? (
-		media-libs/gstreamer
+		media-libs/gstreamer:1.0
 		media-libs/gst-plugins-bad[opengl]
 	)
 	libsecret? ( app-crypt/libsecret )

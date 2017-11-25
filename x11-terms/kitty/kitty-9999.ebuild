@@ -16,6 +16,7 @@ IUSE="X"
 
 DEPEND="media-libs/glfw
 	>=media-libs/glew-2.0.0
+	>=media-libs/harfbuzz-1.5.1
 	media-libs/fontconfig
 	virtual/pkgconfig"
 RDEPEND="X? ( || ( x11-apps/xrdb x11-misc/xsel ) )
