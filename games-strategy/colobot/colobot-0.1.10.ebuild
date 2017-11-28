@@ -4,7 +4,7 @@
 EAPI=6
 inherit eutils cmake-utils
 
-DESCRIPTION="Colobot (Colonize with Bots) is an educational real-time strategy video game featuring 3D graphics"
+DESCRIPTION="Colobot is an educational real-time strategy video game featuring 3D graphics"
 HOMEPAGE="https://colobot.info/"
 if [[ ${PV} == "9999" ]] ; then
 	EGIT_REPO_URI="https://github.com/colobot/colobot"

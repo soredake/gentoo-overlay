@@ -9,6 +9,7 @@ inherit distutils-r1 git-r3
 
 DESCRIPTION="Utility to accurately report the in core memory usage for a program"
 LICENSE="LGPL-2.1"
+HOMEPAGE="https://github.com/pixelb/ps_mem"
 EGIT_REPO_URI="https://github.com/pixelb/ps_mem"
 
 SLOT="0"

@@ -23,8 +23,8 @@ RDEPEND="
 "
 
 src_prepare() {
+	default
 	sed -i -e "s|/usr/local|${ED}/usr|g" Makefile || die
-	eapply_user
 }
 
 src_install() {

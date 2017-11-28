@@ -26,8 +26,8 @@ RDEPEND="
 S="${WORKDIR}/tldr-cpp-client-${PV}"
 
 src_prepare() {
+	default
 	sed -i -e "s|/usr/local|${ED}/usr|g" Makefile || die
-	eapply_user
 }
 
 src_install() {
