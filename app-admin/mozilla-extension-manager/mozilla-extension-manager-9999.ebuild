@@ -11,7 +11,10 @@ EGIT_REPO_URI="https://github.com/NicolasBernaerts/ubuntu-scripts"
 
 SLOT="0"
 
-RDEPEND="app-shells/bash:0"
+RDEPEND="
+	app-shells/bash:0
+	app-arch/unzip
+	net-misc/wget"
 DEPEND="${RDEPEND}"
 
 src_install() {
