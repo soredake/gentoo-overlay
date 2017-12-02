@@ -11,8 +11,7 @@ EGIT_REPO_URI="https://github.com/NicolasBernaerts/ubuntu-scripts"
 
 SLOT="0"
 
-RDEPEND="app-shells/bash:0
-	 gnome-extra/zenity"
+RDEPEND="app-shells/bash:0"
 DEPEND="${RDEPEND}"
 
 src_install() {
