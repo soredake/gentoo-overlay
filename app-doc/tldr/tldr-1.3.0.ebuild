@@ -14,14 +14,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="zsh-completion"
 
-DEPEND="
-	net-misc/curl
-	dev-libs/libzip
-	virtual/pkgconfig
-"
-RDEPEND="
-	${DEPEND}
-"
+CDEPEND="net-misc/curl
+	dev-libs/libzip"
+DEPEND="${CDEPEND}
+	virtual/pkgconfig"
+RDEPEND="${CDEPEND}"
 
 S="${WORKDIR}/tldr-cpp-client-${PV}"
 

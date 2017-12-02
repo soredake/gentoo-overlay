@@ -14,13 +14,14 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE="X"
 
-DEPEND="media-libs/glfw
+CDEPEND="media-libs/glfw
 	>=media-libs/glew-2.0.0
 	>=media-libs/harfbuzz-1.5.1
-	media-libs/fontconfig
-	virtual/pkgconfig"
+	media-libs/fontconfig"
+DEPEND="virtual/pkgconfig
+	${CDEPEND}"
 RDEPEND="X? ( || ( x11-apps/xrdb x11-misc/xsel ) )
-	${DEPEND}"
+	${CDEPEND}"
 
 src_prepare() {
 	default

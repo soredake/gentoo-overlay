@@ -8,6 +8,7 @@ inherit git-r3
 DESCRIPTION="Command line script to handle Firefox and Thunderbird extensions"
 HOMEPAGE="https://github.com/NicolasBernaerts/ubuntu-scripts"
 EGIT_REPO_URI="https://github.com/NicolasBernaerts/ubuntu-scripts"
+LICENSE="Unlicense"
 
 SLOT="0"
 

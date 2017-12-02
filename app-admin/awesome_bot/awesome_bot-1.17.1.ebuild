@@ -9,6 +9,7 @@ DESCRIPTION="Validate links in awesome projects"
 HOMEPAGE="https://github.com/dkhamsing/awesome_bot"
 SRC_URI="https://github.com/dkhamsing/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 SLOT="0"
+LICENSE="MIT"
 KEYWORDS="amd64"
 IUSE="test"
 

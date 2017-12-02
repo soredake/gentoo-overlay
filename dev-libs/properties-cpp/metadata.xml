@@ -5,10 +5,6 @@
 	<longdescription>
 		dbus-c++ attempts to provide a C++ API for D-BUS.
 	</longdescription>
-	<use>
-		<flag name="ecore">Use Ecore integration</flag>
-		<flag name="glib">Use glib integration</flag>
-	</use>
 	<upstream>
 		<remote-id type="sourceforge">dbus-cplusplus</remote-id>
 	</upstream>

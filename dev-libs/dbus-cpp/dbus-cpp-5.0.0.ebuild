@@ -14,9 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc ~x86"
 IUSE="doc ecore glib static-libs test"
 
-RDEPEND="sys-apps/dbus[${MULTILIB_USEDEP}]
-	dev-libs/process-cpp
-	dev-libs/properties-cpp"
+# dev-libs/process-cpp and dev-libs/properties-cpp"
+RDEPEND="sys-apps/dbus"
 DEPEND="${RDEPEND}
 	sys-apps/lsb-release
 	dev-libs/boost
@@ -26,7 +25,7 @@ DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )
 	virtual/pkgconfig"
 
-S=${WORKDIR}/lib${P}
+S="${WORKDIR}/lib${P}"
 
 PATCHES=(
 	"${FILESDIR}"/${P}-gcc-4.7.patch #424707

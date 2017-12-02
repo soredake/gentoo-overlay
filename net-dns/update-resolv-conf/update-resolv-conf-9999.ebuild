@@ -8,6 +8,7 @@ inherit git-r3
 DESCRIPTION="Script that updates DNS settings are pushed by the OpenVPN server"
 HOMEPAGE="https://github.com/masterkorp/openvpn-update-resolv-conf"
 EGIT_REPO_URI="https://github.com/masterkorp/openvpn-update-resolv-conf"
+LICENSE="GPL-3"
 
 SLOT="0"
 KEYWORDS="amd64"

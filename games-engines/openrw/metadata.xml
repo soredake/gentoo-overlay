@@ -4,15 +4,11 @@
 	<maintainer type="person">
 		<email>fdsfgs@krutt.org</email>
 		<name>soredake</name>
-	</maintainer>
-	<maintainer type="project">
-		<email>proxy-maint@gentoo.org</email>
-		<name>Proxy Maintainers</name>
-	</maintainer>
+		</maintainer>
 	<upstream>
 		<remote-id type="github">martinrotter/rssguard</remote-id>
 	</upstream>
 	<use>
-		<flag name="webengine">Use <pkg>dev-qt/qtwebengine</pkg> for embedded web browser</flag>
+		<flag name="viewer">Build viewer</flag>
 	</use>
 </pkgmetadata>

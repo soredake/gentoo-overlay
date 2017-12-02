@@ -14,12 +14,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc ~x86"
 IUSE="doc ecore glib static-libs test"
 
-DEPEND="
-	dev-libs/boost
-	virtual/pkgconfig
-
-"
-RDEPEND="${DEPEND}"
+CDEPEND="dev-libs/boost"
+DEPEND="${CDEPEND}
+	virtual/pkgconfig"
+RDEPEND="${CDEPEND}"
 
 #S=${WORKDIR}/lib${P}
 

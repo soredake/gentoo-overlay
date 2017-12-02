@@ -5,14 +5,7 @@
 		<email>fdsfgs@krutt.org</email>
 		<name>soredake</name>
 	</maintainer>
-	<maintainer type="project">
-		<email>proxy-maint@gentoo.org</email>
-		<name>Proxy Maintainers</name>
-	</maintainer>
 	<upstream>
-		<remote-id type="github">martinrotter/rssguard</remote-id>
+		<remote-id type="github">vivien/i3blocks-contrib</remote-id>
 	</upstream>
-	<use>
-		<flag name="webengine">Use <pkg>dev-qt/qtwebengine</pkg> for embedded web browser</flag>
-	</use>
 </pkgmetadata>

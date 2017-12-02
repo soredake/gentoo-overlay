@@ -13,14 +13,11 @@ LICENSE="MIT"
 SLOT="0"
 IUSE="zsh-completion"
 
-DEPEND="
-	net-misc/curl
-	dev-libs/libzip
-	virtual/pkgconfig
-"
-RDEPEND="
-	${DEPEND}
-"
+CDEPEND="net-misc/curl
+	dev-libs/libzip"
+DEPEND="${CDEPEND}
+	virtual/pkgconfig"
+RDEPEND="${CDEPEND}"
 
 src_prepare() {
 	default

@@ -8,9 +8,8 @@ inherit cmake-utils git-r3
 DESCRIPTION="Open Source sci-fi first person puzzle-platformer with realistic physic simulation."
 HOMEPAGE="https://glportal.de/"
 EGIT_REPO_URI="https://github.com/GlPortal/glPortal"
-#EGIT_SUBMODULES=( '*' '-external/RadixEngine' )
 
-LICENSE="GPL-3+ MIT Apache-2"
+LICENSE="GPL-3+ MIT Apache-2.0"
 IUSE="test"
 SLOT="0"
 

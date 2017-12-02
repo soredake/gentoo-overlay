@@ -10,6 +10,7 @@ inherit distutils-r1 git-r3
 DESCRIPTION="Cli and curses mixer for pulseaudio"
 HOMEPAGE="https://github.com/GeorgeFilipkin/pulsemixer"
 EGIT_REPO_URI="https://github.com/GeorgeFilipkin/pulsemixer"
+LICENSE="MIT"
 SLOT="0"
 
 RDEPEND="media-sound/pulseaudio"

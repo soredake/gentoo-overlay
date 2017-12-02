@@ -12,7 +12,7 @@ SRC_URI="https://github.com/syncthing/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="inotify libnotify nautilus caja"
+IUSE="inotify libnotify"
 RESTRICT="mirror"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
@@ -25,6 +25,9 @@ RDEPEND="${DEPEND}
 	x11-libs/gtk+:3
 	net-p2p/syncthing
 	inotify? ( dev-python/pyinotify[${PYTHON_USEDEP}] )
-	libnotify? ( x11-libs/libnotify )
-	nautilus? ( dev-python/nautilus-python[${PYTHON_USEDEP}] )
-	caja? ( dev-python/python-caja[${PYTHON_USEDEP}] )"
+	libnotify? ( x11-libs/libnotify )"
+
+pkg_postinst() {
+	optfeature "For caja support" dev-python/python-caja[${PYTHON_USEDEP}]
+	optfeature "For nautilus support" dev-python/nautilus-python[${PYTHON_USEDEP}]
+}

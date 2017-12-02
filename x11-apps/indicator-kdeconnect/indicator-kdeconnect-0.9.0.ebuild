@@ -4,7 +4,6 @@
 EAPI=6
 
 inherit cmake-utils vala gnome2
-#vcs-snapshot gnome2
 
 DESCRIPTION="AppIndicator for KDE Connect"
 HOMEPAGE="https://github.com/Bajoja/indicator-kdeconnect"
@@ -13,18 +12,13 @@ SRC_URI="${HOMEPAGE}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64"
-# nemo
-IUSE="nautilus caja"
+IUSE=""
 
-# https://gpo.zugaina.org/gnome-extra/nemo-python
-#nemo? ( https://gpo.zugaina.org/gnome-extra/nemo-python )
 RDEPEND="$(vala_depend)
 	dev-libs/libappindicator:3
 	dev-python/requests-oauthlib
 	kde-misc/kdeconnect
-	x11-libs/gtk+:3
-	nautilus? ( dev-python/nautilus-python )
-	caja? ( dev-python/python-caja )"
+	x11-libs/gtk+:3"
 
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
