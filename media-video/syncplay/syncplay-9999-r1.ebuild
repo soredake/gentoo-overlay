@@ -9,7 +9,7 @@ inherit git-r3 python-r1
 
 MY_PV=${PV/_rc/-RC}
 
-DESCRIPTION="Client/server to synchronize media playback (pyside2 version)"
+DESCRIPTION="Client/server to synchronize media playback (Qt.py version)"
 HOMEPAGE="http://syncplay.pl"
 EGIT_REPO_URI="https://github.com/alby128/syncplay.git"
 EGIT_BRANCH="master"
@@ -22,13 +22,15 @@ REQUIRED_USE="vlc? ( client )
 	${PYTHON_REQUIRED_USE}"
 
 DEPEND=""
-# || ( dev-python/pyside:2[${PYTHON_USEDEP}] dev-python/PyQt5[${PYTHON_USEDEP}] dev-python/pyside:0[${PYTHON_USEDEP}] )
 RDEPEND="${PYTHON_DEPS}
 	|| (
 		dev-python/twisted[${PYTHON_USEDEP}]
 		dev-python/twisted-core[${PYTHON_USEDEP}]
 	)
-	gui? ( dev-python/pyside:0[${PYTHON_USEDEP}] )
+	gui? ( || (
+		dev-python/pyside:2[${PYTHON_USEDEP}]
+		dev-python/pyside:0[${PYTHON_USEDEP}]
+		) )
 	vlc? ( media-video/vlc[lua] )"
 
 S="${WORKDIR}/${PN}-${MY_PV}"
