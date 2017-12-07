@@ -164,7 +164,6 @@ src_configure() {
 		$(usex cli '' '--disable-cplayer')
 		$(use_enable libmpv libmpv-shared)
 
-		--enable-ffmpeg-upstream
 		--disable-libmpv-static
 		--disable-static-build
 		# See deep down below for build-date.
@@ -198,7 +197,6 @@ src_configure() {
 		--disable-vapoursynth-lazy
 		$(use_enable archive libarchive)
 
-		--enable-ffmpeg-upstream
 		--enable-libavdevice
 
 		# Audio outputs:
