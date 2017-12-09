@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit autotools eutils vcs-snapshot xdg-utils gnome2-utils
+inherit autotools gnome2-utils vcs-snapshot xdg-utils
 
 DESCRIPTION="A GTK2 image viewer, manga reader, and booru browser"
 HOMEPAGE="https://github.com/ahodesuka/ahoviewer"
@@ -18,7 +18,7 @@ REQUIRED_USE="ssl? ( ?? ( libressl openssl gnutls ) )"
 DEPEND="dev-cpp/glibmm
 	dev-cpp/gtkmm:2.4
 	dev-libs/libconfig
-	dev-libs/libsigc++
+	dev-libs/libsigc++:2
 	net-misc/curl
 	openssl? ( net-misc/curl[curl_ssl_openssl] )
 	libressl? ( net-misc/curl[curl_ssl_libressl] )
