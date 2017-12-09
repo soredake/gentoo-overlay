@@ -11,8 +11,7 @@ MY_PV=${PV/_rc/-RC}
 
 DESCRIPTION="Client/server to synchronize media playback (Qt.py version)"
 HOMEPAGE="http://syncplay.pl"
-EGIT_REPO_URI="https://github.com/alby128/syncplay.git"
-EGIT_BRANCH="master"
+EGIT_REPO_URI="https://github.com/Syncplay/syncplay.git"
 
 LICENSE="Apache-2.0"
 SLOT="0"
