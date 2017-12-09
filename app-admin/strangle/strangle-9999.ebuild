@@ -17,7 +17,7 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	default
-	sed -i -e "s|prefix=.*|prefix=/usr|" -e 's|LIB32_PATH=.*|LIB32_PATH=$(prefix)/lib32|' -e 's|LIB64_PATH=.*|LIB64_PATH=$(prefix)/lib64|' -e '/^all/s/$(BUILDDIR)libstrangle.conf//' -e '/libstrangle.conf/d' makefile || die
+	sed -i -e "s|prefix=.*|prefix=/usr|" -e 's|LIB32_PATH=.*|LIB32_PATH=$(prefix)/lib|' -e 's|LIB64_PATH=.*|LIB64_PATH=$(prefix)/lib64|' -e '/^all/s/$(BUILDDIR)libstrangle.conf//' -e '/libstrangle.conf/d' makefile || die
 }
 
 src_install() {
