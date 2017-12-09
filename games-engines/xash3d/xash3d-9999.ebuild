@@ -29,7 +29,8 @@ REQUIRED_USE="
 	|| ( sdl dedicated )
 	gles-fixes? ( gles )
 	sdl? ( X )
-	vgui? ( !force-64bit )"
+	vgui? ( !force-64bit )
+	dll-loader? ( !force-64bit )"
 
 src_unpack() {
 	git-r3_src_unpack
@@ -56,7 +57,7 @@ detect_bits() {
 	fi
 
 	if ! use force-64bit; then
-		mycmakeparams+=( -DLIB_SUFFIX="32" )
+		mycmakeparams+=( -DLIB_SUFFIX="" )
 	fi
 }
 

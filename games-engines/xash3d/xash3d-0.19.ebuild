@@ -5,20 +5,15 @@ EAPI=6
 
 inherit cmake-utils
 
-DESCRIPTION="Xash3D FWGS Engine"
-HOMEPAGE="https://github.com/FWGS/xash3d"
+DESCRIPTION="Xash3D Engine is a custom Gold Source engine rewritten from scratch"
+HOMEPAGE="https://xash.su/"
 
-if [[ ${PV} == "9999" ]] ; then
-	EGIT_REPO_URI="https://github.com/FWGS/xash3d"
-	inherit git-r3
-else
-	SRC_URI="
-	https://github.com/FWGS/xash3d/archive/v${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/FWGS/nanogl/archive/98a2f2a11ba4f626620fce19fcd7ae8a2d7e3b8a.tar.gz -> ${P}-nanogl.tar.gz
-	https://github.com/FWGS/halflife/archive/235f2f448f5cab7251206f8ff1f242e30346a4d4.tar.gz -> ${P}-hlsdk.tar.gz
-	"
-	KEYWORDS="~amd64"
-fi
+SRC_URI="
+https://github.com/FWGS/xash3d/archive/v${PV}.tar.gz -> ${P}.tar.gz
+https://github.com/FWGS/nanogl/archive/98a2f2a11ba4f626620fce19fcd7ae8a2d7e3b8a.tar.gz -> ${P}-nanogl.tar.gz
+https://github.com/FWGS/halflife/archive/235f2f448f5cab7251206f8ff1f242e30346a4d4.tar.gz -> ${P}-hlsdk.tar.gz
+"
+KEYWORDS="~amd64"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -37,7 +32,8 @@ REQUIRED_USE="
 	|| ( sdl dedicated )
 	gles-fixes? ( gles )
 	sdl? ( X )
-	vgui? ( !force-64bit )"
+	vgui? ( !force-64bit )
+	dll-loader? ( !force-64bit )"
 
 src_unpack() {
 	unpack "${P}.tar.gz"
@@ -68,7 +64,7 @@ detect_bits() {
 	fi
 
 	if ! use force-64bit; then
-		mycmakeparams+=( -DLIB_SUFFIX="32" )
+		mycmakeparams+=( -DLIB_SUFFIX="" )
 	fi
 }
 
