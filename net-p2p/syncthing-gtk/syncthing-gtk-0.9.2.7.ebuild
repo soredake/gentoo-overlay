@@ -11,7 +11,7 @@ HOMEPAGE="https://github.com/syncthing/syncthing-gtk"
 SRC_URI="https://github.com/syncthing/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 IUSE="inotify libnotify"
 RESTRICT="mirror"
 

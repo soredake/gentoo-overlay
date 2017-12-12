@@ -13,7 +13,7 @@ RESTRICT="fetch"
 
 LICENSE="CC-BY-NC-SA-4.0"
 SLOT="1.1"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 
 IUSE="+system-renpy"
 

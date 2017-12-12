@@ -9,7 +9,6 @@ DESCRIPTION="Smooth and meditative game from the creators of \"Everlasting Summe
 HOMEPAGE="https://moonworks.ru/"
 
 SRC_URI="https://download.moonworks.ru/travnica-${PV}-linux-nosteam.tar.bz2"
-#RESTRICT="fetch"
 MY_V="$(get_version_component_range 1-2)"
 
 LICENSE="CC-BY-NC-SA-4.0"
