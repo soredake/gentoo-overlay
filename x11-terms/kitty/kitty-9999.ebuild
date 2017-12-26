@@ -14,7 +14,8 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE="X"
 
-CDEPEND="media-libs/glfw
+CDEPEND="dev-libs/libunistring
+	media-libs/glfw
 	>=media-libs/glew-2.0.0
 	>=media-libs/harfbuzz-1.5.1
 	media-libs/fontconfig"
