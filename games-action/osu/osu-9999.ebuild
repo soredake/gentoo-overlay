@@ -60,7 +60,7 @@ src_compile() {
 }
 
 src_install() {
-	make_wrapper "osu" 'mono osu!.exe' /usr/$(get_libdir)/osu-lazer
+	make_wrapper "osu" 'mono osu!.exe' /usr/$(get_libdir)/osu
 	make_desktop_entry 'mono osu!.exe' "osu!lazer" "${PN}" \
 		"Application;" "Path=/usr/$(get_libdir)/osu\nTerminal=false\nCategories=Game\nComment=Rythm is only a click away!"
 
