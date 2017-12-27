@@ -62,7 +62,7 @@ src_compile() {
 src_install() {
 	make_wrapper "osu" 'mono osu!.exe' /usr/$(get_libdir)/osu-lazer
 	make_desktop_entry 'mono osu!.exe' "osu!lazer" "${PN}" \
-		"Application;" "Path=/usr/$(get_libdir)/osu-lazer\nTerminal=false\nCategories=Game\nComment=Rythm is only a click away!"
+		"Application;" "Path=/usr/$(get_libdir)/osu\nTerminal=false\nCategories=Game\nComment=Rythm is only a click away!"
 
 	# MIME types
 	insinto /usr/share/mime/packages
