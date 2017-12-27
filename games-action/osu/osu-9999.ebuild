@@ -14,18 +14,14 @@ SRC_URI="!system-nuget? ( https://dist.nuget.org/win-x86-commandline/latest/nuge
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="debug doc system-nuget"
+IUSE="debug msbuild system-nuget"
 RESTRICT="mirror"
 
-RDEPEND="dev-dotnet/libgdiplus
-	>=dev-lang/mono-3.2
-	media-libs/freetype:2[X]
-	media-libs/libsdl2[X,opengl,video]
-	media-libs/openal
-	virtual/jpeg:0
+RDEPEND="media-video/ffmpeg
+	>=dev-lang/mono-5.9.0.398
 	virtual/opengl"
 DEPEND="${RDEPEND}
-	dev-util/msbuild
+	msbuild? ( dev-util/msbuild )
 	system-nuget? ( dev-dotnet/nuget )"
 
 pkg_setup() {
@@ -53,8 +49,11 @@ src_prepare() {
 
 src_compile() {
 	export MONO_IOMAP="case"
-	xbuild /property:Configuration=Release
-	#msbuild
+	if use msbuild; then
+		msbuild
+	else
+		xbuild /property:Configuration=Release
+	fi
 	# Cleanup
 	rm "osu.Game/bin/Release/netstandard.dll"
 	rm "osu.Desktop/bin/Release/netstandard.dll"
