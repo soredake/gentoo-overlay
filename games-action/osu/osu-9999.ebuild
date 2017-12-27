@@ -25,7 +25,7 @@ DEPEND="${RDEPEND}
 
 pkg_setup() {
 	has network-sandbox $FEATURES && \
-		die "games-action/osu-lazer requires 'network-sandbox' to be disabled in FEATURES"
+		die "games-action/osu requires 'network-sandbox' to be disabled in FEATURES"
 	mono-env_pkg_setup
 }
 
