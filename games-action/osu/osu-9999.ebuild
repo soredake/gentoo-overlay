@@ -12,10 +12,9 @@ SRC_URI="!system-nuget? ( https://dist.nuget.org/win-x86-commandline/latest/nuge
 	https://aur.archlinux.org/cgit/aur.git/plain/osu-lazer.png?h=osu-lazer-git -> ${PN}.png
 	https://aur.archlinux.org/cgit/aur.git/plain/x-osu-lazer.xml?h=osu-lazer-git -> x-${PN}.xml"
 
-LICENSE="GPL-3"
+LICENSE="MIT"
 SLOT="0"
 IUSE="debug msbuild system-nuget"
-RESTRICT="mirror"
 
 RDEPEND="media-video/ffmpeg
 	>=dev-lang/mono-5.9.0.398
@@ -62,7 +61,7 @@ src_compile() {
 src_install() {
 	make_wrapper "osu" 'mono osu!.exe' /usr/$(get_libdir)/osu
 	make_desktop_entry 'mono osu!.exe' "osu!lazer" "${PN}" \
-		"Application;" "Path=/usr/$(get_libdir)/osu\nTerminal=false\nCategories=Game\nComment=Rythm is only a click away!"
+		"Game;" "Path=/usr/$(get_libdir)/osu\nTerminal=false"
 
 	# MIME types
 	insinto /usr/share/mime/packages
