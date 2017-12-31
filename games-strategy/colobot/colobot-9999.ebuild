@@ -8,31 +8,50 @@ DESCRIPTION="Colobot is an educational real-time strategy video game featuring 3
 HOMEPAGE="https://colobot.info/"
 if [[ ${PV} == "9999" ]] ; then
 	EGIT_REPO_URI="https://github.com/colobot/colobot"
+	EGIT_SUBMODULES=()
 	inherit git-r3
 else
-	SRC_URI="https://github.com/${PN}/${PN}/archive/${PN}-gold-${PV}-alpha.zip"
+	SRC_URI="https://github.com/colobot/colobot/archive/${PN}-gold-${PV}-alpha.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64"
 	S="${WORKDIR}/${PN}-${PN}-gold-${PV}-alpha"
 fi
 
 LICENSE="GPL-3"
 SLOT="0"
+IUSE="devbuild test tools doc +openal"
 
-DEPEND="
+DEPEND="dev-games/physfs
 	dev-libs/boost
-	media-libs/libsdl2
-	media-libs/sdl2-image
-	media-libs/sdl2-ttf
 	media-libs/glew:0
+	media-libs/libogg
 	media-libs/libpng:0
-	sys-devel/gettext
+	media-libs/libsdl2
 	media-libs/libsndfile
 	media-libs/libvorbis
-	media-libs/libogg
 	media-libs/openal
-	dev-games/physfs
+	media-libs/sdl2-image
+	media-libs/sdl2-ttf
 	media-sound/vorbis-tools
+	sys-devel/gettext
 "
 RDEPEND="${DEPEND}
 	games-strategy/colobot-data
 "
+
+src_configure() {
+	local mycmakeargs=(
+		-DDEV_BUILD="$(usex devbuild)"
+		-DTESTS="$(usex test)"
+		-DTOOLS="$(usex tools)"
+		-DINSTALL_DOCS="$(usex doc)"
+		-DOPENAL_SOUND="$(usex openal)"
+		-DCOLOBOT_INSTALL_BIN_DIR="/usr/bin"
+		-DCOLOBOT_INSTALL_LIB_DIR="/usr/$(get_libdir)"
+	)
+	cmake-utils_src_configure
+}
+
+src_install() {
+	cmake-utils_src_install
+	doicon -s 256 desktop/colobot.ico
+}

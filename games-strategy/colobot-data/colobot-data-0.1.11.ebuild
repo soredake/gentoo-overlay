@@ -7,18 +7,13 @@ inherit eutils cmake-utils
 DESCRIPTION="Data package for colobot (Colonize with Bots)"
 HOMEPAGE="https://colobot.info/"
 
-if [[ ${PV} == "9999" ]] ; then
-	EGIT_REPO_URI="https://github.com/colobot/colobot-data"
-	inherit git-r3
-else
-	SRC_URI="
-	https://github.com/colobot/${PN}/archive/colobot-gold-${PV}-alpha.tar.gz -> ${P}.tar.gz
+SRC_URI="
+	https://github.com/colobot/colobot-data/archive/colobot-gold-${PV}-alpha.zip -> ${P}.zip
 	music_ogg? ( https://colobot.info/files/music/colobot-music_ogg_${PV}-alpha.tar.gz -> ${P}-music-ogg.tar.gz )
 	music_flac? ( https://colobot.info/files/music/colobot-music_flac_${PV}-alpha.tar.gz -> ${P}-music-flac.tar.gz )
-	"
-	KEYWORDS="~amd64"
-	S="${WORKDIR}/${PN}-colobot-gold-${PV}-alpha"
-fi
+"
+KEYWORDS="~amd64"
+S="${WORKDIR}/${PN}-colobot-gold-${PV}-alpha"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -30,14 +25,9 @@ REQUIRED_USE="
 "
 
 src_unpack() {
-	unpack "${P}.tar.gz"
+	unpack "${P}.zip"
 	cd "${S}" || die
-	local list
-	#use music_flac && list+=( flac )
-	#use music_ogg && list+=( ogg )
-	#for q in "${list[@]}"; do
-		tar xf "${DISTDIR}/${P}"-music-*.tar.gz -C "${S}/music" || die "Failed to unpack musc"
-	#done
+	tar xf "${DISTDIR}/${P}"-music-*.tar.gz -C "${S}/music" || die "Failed to unpack musc"
 }
 
 src_prepare() {
