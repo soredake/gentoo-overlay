@@ -11,7 +11,7 @@ if [[ ${PV} == "9999" ]] ; then
 	EGIT_SUBMODULES=()
 	inherit git-r3
 else
-	SRC_URI="https://github.com/${PN}/${PN}/archive/${PN}-gold-${PV}-alpha.tar.gz -> ${P}.tar.gz"
+	SRC_URI="https://github.com/colobot/colobot/archive/${PN}-gold-${PV}-alpha.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64"
 	S="${WORKDIR}/${PN}-${PN}-gold-${PV}-alpha"
 fi
@@ -20,8 +20,7 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE="devbuild test tools doc +openal"
 
-DEPEND="
-	dev-games/physfs
+DEPEND="dev-games/physfs
 	dev-libs/boost
 	media-libs/glew:0
 	media-libs/libogg
@@ -38,10 +37,6 @@ DEPEND="
 RDEPEND="${DEPEND}
 	games-strategy/colobot-data
 "
-src_prepare() {
-	default
-	sed -i 's|${CMAKE_INSTALL_PREFIX}/games|${CMAKE_INSTALL_PREFIX}/bin|' CMakeLists.txt || die
-}
 
 src_configure() {
 	local mycmakeargs=(
@@ -50,6 +45,13 @@ src_configure() {
 		-DTOOLS="$(usex tools)"
 		-DINSTALL_DOCS="$(usex doc)"
 		-DOPENAL_SOUND="$(usex openal)"
+		-DCOLOBOT_INSTALL_BIN_DIR="/usr/bin"
+		-DCOLOBOT_INSTALL_LIB_DIR="/usr/$(get_libdir)"
 	)
 	cmake-utils_src_configure
+}
+
+src_install() {
+	cmake-utils_src_install
+	doicon -s 256 desktop/colobot.ico
 }

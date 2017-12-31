@@ -42,6 +42,11 @@ src_unpack() {
 	fi
 }
 
+src_prepare() {
+	cmake-utils_src_prepare
+	sed -i 's/lib32/lib/' xash3d.sh
+}
+
 detect_bits() {
 	mycmakeparams=()
 	if use amd64; then
