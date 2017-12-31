@@ -13,32 +13,35 @@ SRC_URI="
 	music_flac? ( https://colobot.info/files/music/colobot-music_flac_${PV}-alpha.tar.gz -> ${P}-music-flac.tar.gz )
 "
 KEYWORDS="~amd64"
-S="${WORKDIR}/${PN}-colobot-gold-${PV}-alpha"
+DEPEND="media-sound/vorbis-tools"
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="+music +music_flac music_ogg"
+IUSE="+music music_flac_convert +music_ogg"
 REQUIRED_USE="
-	music? ( ^^ ( music_flac music_ogg ) )
-	music_flac? ( music )
+	music? ( ^^ ( music_flac_convert music_ogg ) )
+	music_flac_convert? ( music )
 	music_ogg? ( music )
 "
+
+S="${WORKDIR}/${PN}-colobot-gold-${PV}-alpha"
 
 src_unpack() {
 	unpack "${P}.zip"
 	cd "${S}" || die
-	tar xf "${DISTDIR}/${P}"-music-*.tar.gz -C "${S}/music" || die "Failed to unpack musc"
+	use music && tar xf "${DISTDIR}/${P}"-music-*.tar.gz -C "${S}/music" || die "Failed to unpack musc"
 }
 
 src_prepare() {
 	cmake-utils_src_prepare
-	use music_flac && sed -i -e '31,38d' -e '82,95d' music/CMakeLists.txt
+	use music && sed -i -e '/find_program(WGET wget)/d' -e '/if(NOT WGET)/,+2 d' music/CMakeLists.txt
 }
 
 src_configure() {
 	local mycmakeargs=(
 		-DMUSIC="$(usex music)"
-		-DMUSIC_FLAC="$(usex music_flac)"
+		-DMUSIC_FLAC="$(usex music_flac_convert)"
+		-DMUSIC_QUALITY="${COLOBOT_DATA_MUSIC_QUALITY:-4}"
 	)
 	cmake-utils_src_configure
 }
