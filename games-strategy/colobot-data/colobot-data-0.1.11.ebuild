@@ -13,7 +13,7 @@ SRC_URI="
 	music_flac? ( https://colobot.info/files/music/colobot-music_flac_${PV}-alpha.tar.gz -> ${P}-music-flac.tar.gz )
 "
 KEYWORDS="~amd64"
-DEPEND="media-sound/vorbis-tools"
+DEPEND="music_flac_convert? ( media-sound/vorbis-tools)"
 
 LICENSE="GPL-3"
 SLOT="0"
