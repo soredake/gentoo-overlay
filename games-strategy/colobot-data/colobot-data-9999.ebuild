@@ -24,7 +24,7 @@ REQUIRED_USE="
 
 src_unpack() {
 	git-r3_src_unpack
-	use music && tar xf "${DISTDIR}/${P}"-music-*.tar.gz -C "${S}/music" || die "Failed to unpack musc"
+	use music && tar xf "${DISTDIR}/${P}"-music-*.tar.gz -C "${S}/music" || die "Failed to unpack music"
 }
 
 src_prepare() {
