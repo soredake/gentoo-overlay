@@ -11,7 +11,7 @@ EGIT_REPO_URI="https://github.com/colobot/colobot-data"
 SRC_URI="music_ogg? ( https://colobot.info/files/music/colobot-music_ogg_latest.tar.gz -> ${P}-music-ogg.tar.gz )
 	music_flac_convert? ( https://colobot.info/files/music/colobot-music_flac_latest.tar.gz -> ${P}-music-flac.tar.gz )"
 
-DEPEND="music_flac_convert? ( media-sound/vorbis-tools)"
+DEPEND="music_flac_convert? ( media-sound/vorbis-tools )"
 
 LICENSE="GPL-3"
 SLOT="0"
