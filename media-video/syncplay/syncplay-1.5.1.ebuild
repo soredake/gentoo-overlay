@@ -15,6 +15,7 @@ SRC_URI="https://github.com/Syncplay/syncplay/archive/v${PV}.tar.gz -> ${P}.tar.
 
 LICENSE="Apache-2.0"
 SLOT="0"
+KEYWORDS="amd64"
 IUSE="+client +server gui vlc"
 REQUIRED_USE="vlc? ( client )
 	gui? ( client )

@@ -11,6 +11,7 @@ DESCRIPTION="Cli and curses mixer for pulseaudio"
 HOMEPAGE="https://github.com/GeorgeFilipkin/pulsemixer"
 SRC_URI="https://github.com/GeorgeFilipkin/pulsemixer/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
+KEYWORDS="amd64"
 SLOT="0"
 
 RDEPEND="media-sound/pulseaudio"
