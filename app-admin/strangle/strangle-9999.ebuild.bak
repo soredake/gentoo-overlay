@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit git-r3 multilib-minimal
+inherit git-r3
 
 DESCRIPTION="Frame rate limiter for Linux/OpenGL"
 HOMEPAGE="https://github.com/torkel104/libstrangle"
@@ -20,15 +20,7 @@ src_prepare() {
 	sed -i -e "s|prefix=.*|prefix=/usr|" -e 's|LIB32_PATH=.*|LIB32_PATH=$(prefix)/lib|' -e 's|LIB64_PATH=.*|LIB64_PATH=$(prefix)/lib64|' -e '/^all/s/$(BUILDDIR)libstrangle.conf//' -e '/libstrangle.conf/d' makefile || die
 }
 
-multilib_src_compile() {
-	CFLAGS="${CFLAGS} -rdynamic -fPIC -shared -Wall -std=c99 -fvisibility=hidden -DHOOK_DLSYM"
-	LDFLAGS="-Wl,-z,relro,-z,now"
-	LDLIBS="-ldl -lrt"
-	${CC}
-}
-
-multilib_src_install() {
+src_install() {
 	default
-	echo ""
 	newbin src/strangle.sh strangle
 }
