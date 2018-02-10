@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-PYTHON_COMPAT=( python{2_7,3_4,3_5} )
+PYTHON_COMPAT=( python{2_7,3_4,3_5,3_6} )
 PYTHON_REQ_USE='threads(+)'
 
 WAF_PV=1.9.8
@@ -30,8 +30,8 @@ SLOT="0"
 IUSE="+alsa aqua archive bluray cdda +cli coreaudio cplugins cuda doc drm dvb
 	dvd +egl encode gbm +iconv jack javascript jpeg lcms +libass libav libcaca
 	libmpv +lua luajit openal +opengl oss pulseaudio raspberry-pi rubberband
-	samba sdl selinux shaderc test tools +uchardet v4l vaapi vdpau vulkan wayland +X +xv
-	zlib zsh-completion"
+	samba sdl selinux shaderc test tools +uchardet v4l vaapi vulkan vdpau wayland +X +xv zlib
+	zsh-completion"
 
 REQUIRED_USE="
 	|| ( cli libmpv )
@@ -42,8 +42,8 @@ REQUIRED_USE="
 	lcms? ( opengl )
 	luajit? ( lua )
 	opengl? ( || ( aqua egl X raspberry-pi !cli ) )
-	raspberry-pi? ( opengl )
 	shaderc? ( vulkan )
+	raspberry-pi? ( opengl )
 	test? ( opengl )
 	tools? ( cli )
 	uchardet? ( iconv )
@@ -58,8 +58,8 @@ REQUIRED_USE="
 "
 
 COMMON_DEPEND="
-	!libav? ( ~media-video/ffmpeg-${PV}:0=[encode?,threads,vaapi?,vdpau?] )
-	libav? ( ~media-video/libav-${PV}:0=[encode?,threads,vaapi?,vdpau?] )
+	!libav? ( >=media-video/ffmpeg-9999:0=[encode?,threads,vaapi?,vdpau?] )
+	libav? ( >=media-video/libav-9999:0=[encode?,threads,vaapi?,vdpau?] )
 	alsa? ( >=media-libs/alsa-lib-1.0.18 )
 	archive? ( >=app-arch/libarchive-3.0.0:= )
 	bluray? ( >=media-libs/libbluray-0.3.0:= )
