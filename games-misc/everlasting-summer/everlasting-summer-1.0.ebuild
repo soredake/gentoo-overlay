@@ -18,16 +18,18 @@ KEYWORDS="amd64 ~x86"
 IUSE="+system-renpy"
 
 RDEPEND="system-renpy? ( games-engines/renpy )
-	media-libs/freetype
-	media-libs/glew
-	media-libs/libjpeg-turbo
-	media-libs/libpng
-	media-libs/libsdl
-	media-libs/sdl-image
-	media-libs/sdl-sound
-	media-libs/sdl-ttf
-	media-video/ffmpeg
-	sys-libs/zlib"
+	!system-renpy? (
+		media-libs/freetype
+		media-libs/glew
+		media-libs/libjpeg-turbo
+		media-libs/libpng
+		media-libs/libsdl
+		media-libs/sdl-image
+		media-libs/sdl-sound
+		media-libs/sdl-ttf
+		media-video/ffmpeg
+		sys-libs/zlib
+	)"
 DEPEND="app-arch/unzip"
 
 QA_PREBUILT="/usr/share/${PN}/${PV}/lib/*"
