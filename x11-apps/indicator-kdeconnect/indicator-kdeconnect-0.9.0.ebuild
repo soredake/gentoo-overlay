@@ -12,7 +12,6 @@ SRC_URI="${HOMEPAGE}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
 RDEPEND="$(vala_depend)
 	dev-libs/libappindicator:3
