@@ -11,8 +11,6 @@ EGIT_REPO_URI="https://github.com/beandog/bluray_info.git"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND=">=media-libs/libbluray-1.0.0"
 RDEPEND="${DEPEND}"
