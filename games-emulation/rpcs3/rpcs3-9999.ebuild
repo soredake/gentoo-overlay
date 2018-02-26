@@ -55,6 +55,9 @@ EGIT_SUBMODULES=(
 	"-Vulkan/Vulkan-LoaderAndValidationLayers"
 )
 
+#CC=clang
+#CXX=clang++
+
 src_prepare() {
 	default
 
