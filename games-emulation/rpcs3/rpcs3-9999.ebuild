@@ -23,10 +23,10 @@ SLOT="0"
 IUSE="alsa gdb joystick +llvm pulseaudio vulkan"
 
 RDEPEND="
-	>=dev-qt/qtcore-5.7
-	>=dev-qt/qtdbus-5.7
-	>=dev-qt/qtgui-5.7
-	>=dev-qt/qtwidgets-5.7
+	>=dev-qt/qtcore-5.10
+	>=dev-qt/qtdbus-5.10
+	>=dev-qt/qtgui-5.10
+	>=dev-qt/qtwidgets-5.10
 	alsa? ( media-libs/alsa-lib )
 	gdb? ( sys-devel/gdb )
 	joystick? ( dev-libs/libevdev )
