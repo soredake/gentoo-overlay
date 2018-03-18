@@ -8,7 +8,7 @@ inherit eutils git-r3 mono-env gnome2-utils xdg-utils
 DESCRIPTION="osu! - Rhythm is just a *click* away!"
 HOMEPAGE="https://osu.ppy.sh/"
 EGIT_REPO_URI="https://github.com/ppy/osu.git"
-SRC_URI="!system-nuget? ( https://dist.nuget.org/win-x86-commandline/latest/nuget.exe )
+SRC_URI="!system-nuget? ( https://dist.nuget.org/win-x86-commandline/v4.6.0/nuget.exe )
 	https://aur.archlinux.org/cgit/aur.git/plain/osu-lazer.png?h=osu-lazer-git -> ${PN}.png
 	https://aur.archlinux.org/cgit/aur.git/plain/x-osu-lazer.xml?h=osu-lazer-git -> x-${PN}.xml"
 
