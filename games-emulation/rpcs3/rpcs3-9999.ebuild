@@ -30,7 +30,7 @@ RDEPEND="
 	alsa? ( media-libs/alsa-lib )
 	gdb? ( sys-devel/gdb )
 	joystick? ( dev-libs/libevdev )
-	llvm? ( sys-devel/llvm:4 )
+	llvm? ( sys-devel/llvm )
 	media-libs/glew:0
 	media-libs/libpng:*
 	media-libs/openal
