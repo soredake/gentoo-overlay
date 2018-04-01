@@ -25,7 +25,8 @@ fi
 S="${WORKDIR}/${MY_P}"
 
 STAGING_P="wine-staging-${PV}"
-STAGING_DIR="${WORKDIR}/${STAGING_P}"
+#STAGING_DIR="${WORKDIR}/${STAGING_P}"
+STAGING_DIR="${WORKDIR}/wine-staging-3.6"
 PBA_V="87307b1b9093c769d21d0803bb122b9866bb887c"
 PBA_P="wine-pba-${PBA_V}"
 PBA_DIR="${WORKDIR}/${PBA_P}"
