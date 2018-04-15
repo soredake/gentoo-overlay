@@ -25,9 +25,8 @@ fi
 S="${WORKDIR}/${MY_P}"
 
 STAGING_P="wine-staging-${PV}"
-#STAGING_DIR="${WORKDIR}/${STAGING_P}"
-STAGING_DIR="${WORKDIR}/wine-staging-3.6"
-PBA_V="e94417f22238cd64563011206503ee12f72b205b"
+STAGING_DIR="${WORKDIR}/${STAGING_P}"
+PBA_V="96e68f742c5abdd346ef56de353d1e46cda73659"
 PBA_P="wine-pba-${PBA_V}"
 PBA_DIR="${WORKDIR}/${PBA_P}"
 D3D9_P="wine-d3d9-${PV}"
@@ -35,7 +34,7 @@ D3D9_DIR="${WORKDIR}/wine-d3d9-patches-${D3D9_P}"
 GWP_V="20180120"
 PATCHDIR="${WORKDIR}/gentoo-wine-patches"
 
-DESCRIPTION="Free implementation of Windows(tm) on Unix, with optional external patchsets (with pba)"
+DESCRIPTION="Free implementation of Windows(tm) on Unix, with optional external patchsets (with pba and vulkan)"
 HOMEPAGE="https://www.winehq.org/"
 SRC_URI="${SRC_URI}
 	https://dev.gentoo.org/~np-hardass/distfiles/wine/gentoo-wine-patches-${GWP_V}.tar.xz
@@ -49,7 +48,7 @@ else
 	SRC_URI="${SRC_URI}
 	staging? ( https://github.com/wine-staging/wine-staging/archive/v${PV}.tar.gz -> ${STAGING_P}.tar.gz )
 	d3d9? ( https://github.com/sarnex/wine-d3d9-patches/archive/${D3D9_P}.tar.gz )
-	pba? ( https://github.com/FireBurn/wine-pba/archive/${PBA_V}.tar.gz -> ${PBA_P}.tar.gz )"
+	pba? ( https://github.com/acomminos/wine-pba/archive/${PBA_V}.tar.gz -> ${PBA_P}.tar.gz )"
 fi
 
 LICENSE="LGPL-2.1"
@@ -394,7 +393,6 @@ src_prepare() {
 		ewarn "Wine bugzilla should explicitly state that staging was used."
 
 		local STAGING_EXCLUDE=""
-		#STAGING_EXCLUDE="${STAGING_EXCLUDE} -W winhlp32-Flex_Workaround" # Avoid double patching https://bugs.winehq.org/show_bug.cgi?id=42132
 		use pipelight || STAGING_EXCLUDE="${STAGING_EXCLUDE} -W Pipelight"
 
 		# Launch wine-staging patcher in a subshell, using eapply as a backend, and gitapply.sh as a backend for binary patches
@@ -415,7 +413,8 @@ src_prepare() {
 					"${PBA_DIR}/patches/0006-wined3d-Perform-initial-allocation-of-persistent-buf.patch"
 					"${PBA_DIR}/patches/0007-wined3d-Avoid-freeing-persistent-buffer-heap-element.patch"
 					"${PBA_DIR}/patches/0008-wined3d-Add-DISABLE_PBA-envvar-some-PBA-cleanup.patch"
-					"${PBA_DIR}/patches/0009-wined3d-Add-quirk-to-use-GL_CLIENT_STORAGE_BIT-for-m.patch" )
+					"${PBA_DIR}/patches/0009-wined3d-Add-quirk-to-use-GL_CLIENT_STORAGE_BIT-for-m.patch"
+)
 	fi
 	if use d3d9; then
 		if use staging; then
