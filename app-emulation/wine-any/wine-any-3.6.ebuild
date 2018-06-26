@@ -26,7 +26,7 @@ S="${WORKDIR}/${MY_P}"
 
 STAGING_P="wine-staging-${PV}"
 STAGING_DIR="${WORKDIR}/${STAGING_P}"
-PBA_V="96e68f742c5abdd346ef56de353d1e46cda73659"
+PBA_V="1712a3769b0b1ae107cdc0e3bfa4f285b0e43321"
 PBA_P="wine-pba-${PBA_V}"
 PBA_DIR="${WORKDIR}/${PBA_P}"
 D3D9_P="wine-d3d9-${PV}"
