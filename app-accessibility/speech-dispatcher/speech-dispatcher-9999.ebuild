@@ -24,7 +24,7 @@ COMMON_DEPEND="python? ( ${PYTHON_DEPS} )
 	>=media-libs/libsndfile-1.0.2
 	alsa? ( media-libs/alsa-lib )
 	ao? ( media-libs/libao )
-	espeak? ( app-accessibility/espeak-ng )
+	espeak-ng? ( app-accessibility/espeak-ng )
 	flite? ( app-accessibility/flite )
 	nas? ( media-libs/nas )
 	pulseaudio? ( media-sound/pulseaudio )"
@@ -89,8 +89,8 @@ src_install() {
 
 pkg_postinst() {
 	local editconfig="n"
-	if ! use espeak; then
-		ewarn "You have disabled espeak, which is speech-dispatcher's"
+	if ! use espeak-ng; then
+		ewarn "You have disabled espeak-ng, which is speech-dispatcher's"
 		ewarn "default speech synthesizer."
 		ewarn
 		editconfig="y"
