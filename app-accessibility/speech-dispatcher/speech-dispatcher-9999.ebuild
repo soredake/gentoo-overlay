@@ -13,7 +13,6 @@ EGIT_REPO_URI="https://github.com/brailcom/speechd.git"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm ~arm64 ~hppa ia64 ppc ppc64 sparc x86 ~amd64-linux ~x86-linux"
 IUSE="alsa ao +espeak-ng flite nas pulseaudio python static-libs"
 
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
