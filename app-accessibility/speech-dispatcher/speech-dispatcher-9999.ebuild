@@ -5,7 +5,7 @@ EAPI=6
 
 PYTHON_COMPAT=( python3_{4,5,6} )
 
-inherit eutils git-r3 python-r1
+inherit eutils autotools git-r3 python-r1
 
 DESCRIPTION="Speech synthesis interface"
 HOMEPAGE="http://www.freebsoft.org/speechd"
@@ -34,6 +34,10 @@ DEPEND="${COMMON_DEPEND}
 RDEPEND="${COMMON_DEPEND}
 	dev-python/pyxdg"
 
+src_prepare() {
+	default
+	eautoreconf
+}
 src_configure() {
 	# bug 573732
 	export GIT_CEILING_DIRECTORIES="${WORKDIR}"
